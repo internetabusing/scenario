@@ -1,6 +1,6 @@
 describe('Тест добавления товара в корзину и создания заказа', () => {
     it('должен добавить два товара в корзину и создать заказ', () => {
-        cy.visit('/products'); // Переход на страницу с товарами
+        cy.visit('https://www.saucedemo.com/inventory.html'); // Переход на страницу с товарами
         
         // Добавление первого товара в корзину
         cy.get('.product').first().find('button.add-to-cart').click(); // Нажатие кнопки добавления товара
@@ -17,7 +17,7 @@ describe('Тест добавления товара в корзину и соз
         cy.get('input[name="address"]').type('123 Main St');
         cy.get('button[type="submit"]').click(); // Нажатие на кнопку отправки формы заказа
         
-        cy.url().should('include', '/order-confirmation'); // Проверка, что перенаправило на страницу подтверждения заказа
+        cy.url().should('include', 'https://www.saucedemo.com/cart.html'); // Проверка, что перенаправило на страницу подтверждения заказа
         cy.contains('Thank you for your order!'); // Проверка наличия сообщения о подтверждении заказа
     });
 });

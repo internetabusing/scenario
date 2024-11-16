@@ -1,6 +1,6 @@
 describe('Тест сортировки по цене', () => {
     it('должен сортировать товары по цене (asc/desc)', () => {
-        cy.visit('/products'); // Переход на страницу с товарами
+        cy.visit('https://www.saucedemo.com/inventory.html'); // Переход на страницу с товарами
         
         cy.get('select[name="sort"]').select('Price: Low to High'); // Выбор сортировки по возрастанию цены
         
